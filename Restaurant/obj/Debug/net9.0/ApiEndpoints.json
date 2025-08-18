@@ -1,0 +1,149 @@
+[
+  {
+    "ContainingType": "Restaurant.Controllers.RestaurantController",
+    "Method": "GetAllRestaurants",
+    "RelativePath": "api/Restaurant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.RestaurantController",
+    "Method": "UpdateRestaurants",
+    "RelativePath": "api/Restaurant",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "restaurantUpdateDTO",
+        "Type": "Restaurant.Domain.DTOS.RestaurantsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.RestaurantController",
+    "Method": "Create",
+    "RelativePath": "api/Restaurant/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantDto",
+        "Type": "Restaurant.Domain.DTOS.RestaurantsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.RestaurantController",
+    "Method": "GetRestaurant",
+    "RelativePath": "api/Restaurant/find",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Restaurant.WeatherForecast, Restaurant, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "UpdateRestaurants",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "restaurantUpdateDTO",
+        "Type": "Restaurant.Domain.DTOS.RestaurantsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "Create",
+    "RelativePath": "WeatherForecast/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Restaurant.Application.CQRS.COMMAND.CreateRestaurantCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "GetAllRestaurants",
+    "RelativePath": "WeatherForecast/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "GetRestaurant",
+    "RelativePath": "WeatherForecast/find",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

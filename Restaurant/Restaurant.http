@@ -1,0 +1,101 @@
+@Restaurant_HostAddress = https://localhost:7161
+
+@Id=2
+GET {{Restaurant_HostAddress}}/api/restaurant/find?Id={{Id}}
+
+###
+
+GET {{Restaurant_HostAddress}}/api/restaurant
+
+
+POST {{Restaurant_HostAddress}}/api/restaurant/add
+Content-Type: application/json
+
+{
+  //RestaurantsDTO
+}
+
+###
+
+POST {{Restaurant_HostAddress}}/api/restaurant/add
+Content-Type: application/json
+
+{
+  "Name": "New4 Restaurant",
+  "Description": "A great place to eat with delicious food",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "contact@samplerestaurant.com",
+  "ContactNumber": "+1234567890",
+  "CreatedAt": "2023-05-15T12:00:00Z",
+  "City": "New York",
+  "Street": "123 Main St",
+  "PostalCode": "10001",
+  "Dishes": [
+    {
+      "Name": "Spaghetti Carbonara",
+      "Description": "Classic Italian pasta with eggs, cheese, pancetta, and pepper",
+      "Price": "14.99"
+    },
+    {
+      "Name": "Margherita Pizza",
+      "Description": "Traditional pizza with tomato sauce, mozzarella, and basil",
+      "Price": "12.99"
+    }
+  ]
+}
+
+###
+
+POST {{Restaurant_HostAddress}}/api/restaurant/add
+Content-Type: application/json
+
+{
+  //RestaurantsDTO
+}
+
+###
+
+POST {{Restaurant_HostAddress}}/api/restaurant/add
+Content-Type: application/json
+
+{
+  //RestaurantsDTO
+}
+
+###
+
+POST {{Restaurant_HostAddress}}/weatherforecast/add
+Content-Type: application/json
+
+{
+  "Name": "New6 Restaurant",
+  "Description": "A great place to eat with delicious food",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "contact@samplerestaurant.com",
+  "ContactNumber": "+1234567890",
+  "CreatedAt": "2023-05-15T12:00:00Z",
+  "City": "New York",
+  "Street": "123 Main St",
+  "PostalCode": "10001",
+  "Dishes": [
+    {
+      "Name": "Spaghetti Carbonara 2",
+      "Description": "Classic Italian pasta with eggs, cheese, pancetta, and pepper",
+      "Price": "14.99"
+    },
+    {
+      "Name": "Margherita Pizza 2",
+      "Description": "Traditional pizza with tomato sauce, mozzarella, and basil",
+      "Price": "12.99"
+    }
+  ]
+}
+  
+
+###
+
+GET {{Restaurant_HostAddress}}/weatherforecast/all
+
+###
