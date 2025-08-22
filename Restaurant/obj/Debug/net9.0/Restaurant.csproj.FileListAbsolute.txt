@@ -181,3 +181,13 @@ C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\MediatR.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\MediatR.Contracts.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.AspNetCore.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Sinks.File.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.sourcelink.json

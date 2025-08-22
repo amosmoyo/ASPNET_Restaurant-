@@ -17,3 +17,4 @@ C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Infrastucture\ob
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Infrastucture\obj\Debug\net8.0\Restaurant.Infrastucture.pdb
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Infrastucture\obj\Debug\net8.0\Restaurant.Infrastucture.genruntimeconfig.cache
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Infrastucture\obj\Debug\net8.0\ref\Restaurant.Infrastucture.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Infrastucture\obj\Debug\net8.0\Restaurant.Infrastucture.sourcelink.json

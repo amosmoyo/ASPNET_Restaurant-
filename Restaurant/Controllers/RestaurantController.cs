@@ -19,6 +19,7 @@ namespace Restaurant.Controllers
             try
             {
                 logger.LogInformation("Starting to fetch restaurants...");
+
                 var stopwatch = Stopwatch.StartNew();
 
                 var restaurants = await restaurantServices.GetAllRestaurants();
@@ -28,6 +29,7 @@ namespace Restaurant.Controllers
                 stopwatch.Stop();
                 logger.LogInformation("Successfully fetched {RestaurantCount} restaurants in {ElapsedMilliseconds}ms",
                     restaurants.Count(), stopwatch.ElapsedMilliseconds);
+                logger.LogInformation("restaurantsDTO: {@restaurantsDTO}", restaurantsDTO);
 
 
                 // Return the complete list
