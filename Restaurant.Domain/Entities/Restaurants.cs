@@ -21,7 +21,7 @@ namespace Restaurant.Domain.Entities
 
         public Address? address { get; set;}
 
-        public List<Dish>? Dishes = new List<Dish>();
+        public List<Dish>? Dishes { get; set; } = new List<Dish>();
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

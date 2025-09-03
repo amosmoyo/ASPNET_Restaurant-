@@ -97,9 +97,25 @@
         "IsRequired": false
       },
       {
-        "Name": "restaurantUpdateDTO",
-        "Type": "Restaurant.Domain.DTOS.RestaurantsDTO",
+        "Name": "command",
+        "Type": "Restaurant.Application.CQRS.COMMAND.UPDATE.UpdateRestaurantCommand",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "DeleteRestaurants",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

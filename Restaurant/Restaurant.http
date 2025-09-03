@@ -99,3 +99,22 @@ Content-Type: application/json
 GET {{Restaurant_HostAddress}}/weatherforecast/all
 
 ###
+
+###
+PUT {{Restaurant_HostAddress}}/weatherforecast?Id={{Id}}
+Content-Type: application/json
+
+{
+  "Name": "update2 Restaurant update",
+  "Description": "A great place to eat with delicious food",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "contact@samplerestaurant.com",
+  "ContactNumber": "+1234567890",
+  "CreatedAt": "2023-05-15T12:00:00Z",
+  "City": "New York",
+  "Street": "123 Main St",
+  "PostalCode": "10001"
+  }
+
+###

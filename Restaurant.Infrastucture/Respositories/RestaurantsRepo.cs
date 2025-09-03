@@ -26,7 +26,7 @@ namespace Restaurant.Infrastucture.Respositories
 
         public async Task<Restaurants?> GetOneAsync(int Id)
         {
-            var restaurants = await dbContext.Restaurants.FirstOrDefaultAsync(r => r.Id == Id);
+            var restaurants = await dbContext.Restaurants.Include(r => r.address).Include(r => r.Dishes).FirstOrDefaultAsync(r => r.Id == Id);
 
             return restaurants;
         }
@@ -192,6 +192,75 @@ namespace Restaurant.Infrastucture.Respositories
             catch (Exception ex) 
             {
                 return null;
+            }
+
+        }
+
+        public async Task<Restaurants?> UpdateRestaurantAsyncv2(int Id, Restaurants restaurants)
+        {
+            var existingRestaurant = await dbContext.Restaurants
+                .Include(r => r.address)
+                .Include(r => r.Dishes)
+                .FirstOrDefaultAsync(r => r.Id == Id);
+
+            if (existingRestaurant == null)
+            {
+                return null;
+            }
+
+            //Map update update fro DTO to existing entity
+            //mapper.Map(restaurantsDTO, existingRestaurant);
+
+            //Handle address update
+            existingRestaurant.address ??= new Address();
+            existingRestaurant.address.City = restaurants?.address?.City;
+            existingRestaurant.address.PostalCode = restaurants?.address?.PostalCode;
+            existingRestaurant.address.Street = restaurants?.address?.Street;
+
+
+            //Handle dishes
+            if (restaurants.Dishes.Any() && restaurants.Dishes != null)
+            {
+                existingRestaurant.Dishes = mapper.Map<List<Dish>>(restaurants.Dishes);
+            }
+
+
+            try
+            {
+                await dbContext.SaveChangesAsync();
+
+                return existingRestaurant;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public async Task<int> DeleteRestaurantAsyncv2(int Id)
+        {
+            var existingRestaurant = await dbContext.Restaurants
+                .Include(r => r.address)
+                .Include(r => r.Dishes)
+                .FirstOrDefaultAsync(r => r.Id == Id);
+
+            if (existingRestaurant == null)
+            {
+                return 0;
+            }
+
+            try
+            {
+                dbContext.Restaurants.Remove(existingRestaurant);
+
+                await dbContext.SaveChangesAsync();
+
+                return existingRestaurant.Id;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
 
         }

@@ -27,11 +27,18 @@ Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configurat
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+
+
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastucture(builder.Configuration);
+
 builder.Services.AddApplication();
+
 builder.Host.UseSerilog();
+
 
 var app = builder.Build();
 
@@ -45,7 +52,15 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    //app.MapOpenApi();
+
+    app.UseSwagger();
+
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+        options.RoutePrefix = "swagger"; // UI at /swagger
+    });
 }
 
 app.UseSerilogRequestLogging();

@@ -10,3 +10,4 @@ C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Domain\obj\Debug
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.pdb
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Domain\obj\Debug\net8.0\ref\Restaurant.Domain.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.csproj.AssemblyReference.cache
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Domain\obj\Debug\net8.0\Restaurant.Domain.sourcelink.json

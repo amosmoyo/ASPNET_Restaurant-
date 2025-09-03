@@ -45,5 +45,19 @@ public class RestaurantServices(IRestaurantsRepo RestaurantsRepo) : IRestaurantS
 
         return restaurant;
     }
+
+    public async Task<Restaurants?> UpdateRestaurantv2(int Id, Restaurants restaurants)
+    {
+        var restaurant = await RestaurantsRepo.UpdateRestaurantAsyncv2(Id, restaurants);
+
+        return restaurant;
+    }
+
+    public async Task<int> DeleteRestaurant(int Id)
+    {
+        var restaurantId = await RestaurantsRepo.DeleteRestaurantAsyncv2(Id);
+
+        return restaurantId;
+    }
 }
 

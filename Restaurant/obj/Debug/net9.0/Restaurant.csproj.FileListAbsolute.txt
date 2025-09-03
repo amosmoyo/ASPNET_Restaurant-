@@ -191,3 +191,6 @@ C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Serilog.Sinks.File.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.sourcelink.json
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

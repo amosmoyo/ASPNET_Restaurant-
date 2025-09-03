@@ -19,7 +19,10 @@ namespace Restaurant.Domain.Repositories
 
         Task<Restaurants?> CreateAsyncv2(Restaurants restaurants);
 
-
         Task<Restaurants?> UpdateRestaurantAsync(int Id, RestaurantsDTO restaurantsDTO);
+
+        Task<Restaurants?> UpdateRestaurantAsyncv2(int Id, Restaurants restaurants);
+
+        Task<int> DeleteRestaurantAsyncv2(int Id);
     }
 }

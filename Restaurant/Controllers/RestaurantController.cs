@@ -104,7 +104,7 @@ namespace Restaurant.Controllers
 
                 if(UpdatedRestaurant == null)
                 {
-                    return NotFound();
+                    return NotFound(new { Message = $"Restaurant with Id {Id} not found" });
                 }
 
                 return CreatedAtAction(nameof(GetRestaurant), new { id = UpdatedRestaurant.Id }, mapper.Map<RestaurantsDTO>(UpdatedRestaurant));

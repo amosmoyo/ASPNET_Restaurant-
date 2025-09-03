@@ -2,8 +2,12 @@ using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Validations;
 using Restaurant.Application.CQRS.COMMAND;
+using Restaurant.Application.CQRS.COMMAND.DELETE;
+using Restaurant.Application.CQRS.COMMAND.UPDATE;
 using Restaurant.Application.CQRS.QUERIES.GetAllRestaurants;
+using Restaurant.Application.CQRS.QUERIES.GetRestaurantById;
 using Restaurant.Application.Services;
 using Restaurant.Domain.DTOS;
 using System.Diagnostics;
@@ -78,23 +82,26 @@ public class WeatherForecastController : ControllerBase
         try
         {
             _logger.LogInformation("Starting to fetch restaurants...");
+
             var stopwatch = Stopwatch.StartNew();
 
-            var restaurant = await restaurantServices.GetRestaurant(Id);
+            // var restaurant = await restaurantServices.GetRestaurant(Id);
+            var restaurant = await _mediator.Send(new GetRestaurantByIdCommand{ Id = Id });
 
-            var restaurantsDTO = RestaurantsDTO.FromEntity(restaurant);
+          
 
             stopwatch.Stop();
+
             _logger.LogInformation("Successfully fetched {RestaurantCount} restaurants in {ElapsedMilliseconds}ms",
                 restaurant, stopwatch.ElapsedMilliseconds);
 
-            if (restaurantsDTO == null)
+            if (restaurant == null)
             {
                 return NotFound();
             }
 
             // Return the complete list
-            return Ok(restaurantsDTO);
+            return Ok(restaurant);
         }
         catch (Exception ex)
         {
@@ -114,21 +121,16 @@ public class WeatherForecastController : ControllerBase
 
 
     [HttpPut]
-    public async Task<ActionResult> UpdateRestaurants([FromQuery] int Id, [FromBody] RestaurantsDTO restaurantUpdateDTO)
+    public async Task<ActionResult> UpdateRestaurants([FromQuery] int Id, [FromBody] UpdateRestaurantCommand command)
     {
         try
         {
             _logger.LogInformation("Starting to fetch restaurants...");
             var stopwatch = Stopwatch.StartNew();
 
-            var restaurant = await restaurantServices.GetRestaurant(Id);
+            command.Id = Id;
 
-            if (restaurant == null)
-            {
-                return NotFound();
-            }
-
-            var UpdatedRestaurant = await restaurantServices.UpdateRestaurant(Id, restaurantUpdateDTO);
+            var UpdatedRestaurant = await _mediator.Send(command);
 
             if (UpdatedRestaurant == null)
             {
@@ -136,6 +138,34 @@ public class WeatherForecastController : ControllerBase
             }
 
             return CreatedAtAction(nameof(GetRestaurant), new { id = UpdatedRestaurant.Id }, mapper.Map<RestaurantsDTO>(UpdatedRestaurant));
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while fetching restaurants");
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                new { Message = "An error occurred while processing your request" });
+        }
+    }
+
+    [HttpDelete]
+    public async Task<ActionResult> DeleteRestaurants([FromQuery] int Id)
+    {
+        try
+        {
+            _logger.LogInformation("Starting to delete operations...");
+
+            var stopwatch = Stopwatch.StartNew();
+
+            DeleteRestaurantCommand command = new DeleteRestaurantCommand{Id = Id };
+
+            var restaurantId = await _mediator.Send(command);
+
+            if (restaurantId == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(new { Message = "Restaurant deleted successfully", Id = restaurantId });
         }
         catch (Exception ex)
         {

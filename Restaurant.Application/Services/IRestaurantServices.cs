@@ -14,5 +14,9 @@ namespace Restaurant.Application.Services
         Task<Restaurants?> CreateRestaurantv2(Restaurants restaurant);
 
         Task<Restaurants?> UpdateRestaurant(int Id, RestaurantsDTO restaurantsDTO);
+
+        Task<Restaurants?> UpdateRestaurantv2(int Id, Restaurants restaurants);
+
+        Task<int> DeleteRestaurant(int Id);
     }
 }

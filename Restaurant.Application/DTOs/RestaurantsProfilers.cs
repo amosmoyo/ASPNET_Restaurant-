@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Restaurant.Application.CQRS.COMMAND;
+using Restaurant.Application.CQRS.COMMAND.UPDATE;
 using Restaurant.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,15 @@ namespace Restaurant.Application.DTOs
             .ForMember(dest => dest.Dishes, opt => opt.MapFrom(src => src.Dishes));
 
             CreateMap<CreateDishesCommand, Dish>();
+
+            CreateMap<UpdateRestaurantCommand, Restaurants>()
+            .ForMember(dest => dest.address, opt => opt.MapFrom(src => new Address
+            {
+                City = src.City,
+                Street = src.Street,
+                PostalCode = src.PostalCode,
+            }))
+            .ForMember(dest => dest.Dishes, opt => opt.MapFrom(src => src.Dishes));
         }
     }
 }

@@ -13,3 +13,4 @@ C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Application\obj\
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Application\obj\Debug\net8.0\refint\Restaurant.Application.dll
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Application\obj\Debug\net8.0\Restaurant.Application.pdb
 C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Application\obj\Debug\net8.0\ref\Restaurant.Application.dll
+C:\Users\Amos.Moyo\Downloads\TESTPROJECTS\Restaurant\Restaurant.Application\obj\Debug\net8.0\Restaurant.Application.sourcelink.json
