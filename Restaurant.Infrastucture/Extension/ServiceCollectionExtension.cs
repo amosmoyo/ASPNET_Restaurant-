@@ -28,7 +28,11 @@ namespace Restaurant.Infrastucture.Extension
             );
 
             services.AddScoped<IRestaurantSeeder, RestaurantSeader>();
+
             services.AddScoped<IRestaurantsRepo, RestaurantsRepo>();
+
+            services.AddScoped<IDishRepo, DishRepo>();
+
             services.AddAutoMapper(typeof(RestaurantProfile).Assembly);
         }
 

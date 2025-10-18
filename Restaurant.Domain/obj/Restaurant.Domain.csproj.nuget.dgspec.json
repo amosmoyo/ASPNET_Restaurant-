@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj": {}
+    "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj": {
+    "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj",
+        "projectUniqueName": "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj",
         "projectName": "Restaurant.Domain",
-        "projectPath": "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj",
+        "projectPath": "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\Restaurant.Domain.csproj",
         "packagesPath": "C:\\Users\\Amos.Moyo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\obj\\",
+        "outputPath": "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

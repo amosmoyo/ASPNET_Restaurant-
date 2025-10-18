@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ONpG1Gjxa1U=",
+  "dgSpecHash": "G3Wa055P9Ks=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amos.Moyo\\Downloads\\TESTPROJECTS\\Restaurant\\Restaurant.Application\\Restaurant.Application.csproj",
+  "projectFilePath": "D:\\TESTPROJECTS\\Restaurant\\Restaurant.Application\\Restaurant.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Amos.Moyo\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\Amos.Moyo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\mediatr\\13.0.0\\mediatr.13.0.0.nupkg.sha512",
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -20,5 +22,12 @@
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\microsoft.identitymodel.logging\\8.0.1\\microsoft.identitymodel.logging.8.0.1.nupkg.sha512",
     "C:\\Users\\Amos.Moyo\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

@@ -40,7 +40,9 @@ namespace Restaurant.Domain.Entities
         public string? Name { get; set; }
         public string Description { get; set; } = default!;
         public string Price { get; set; } = default!;
-        public Restaurants Restaurants { get; set; }
+
+        // 👇 Add this navigation property back
+        //public Restaurants? Restaurants { get; set; }
     }
     
 

@@ -3,6 +3,7 @@ using Restaurant.Infrastucture.Seeders;
 using Restaurant.Application.Extension;
 using Serilog;
 using Serilog.Events;
+using Restaurant.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +26,12 @@ Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configurat
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+            options.JsonSerializerOptions.WriteIndented = true;
+        });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
@@ -37,10 +43,16 @@ builder.Services.AddInfrastucture(builder.Configuration);
 
 builder.Services.AddApplication();
 
+builder.Services.AddTransient<ErrorHandlingMiddleware>();
+builder.Services.AddTransient<RequestTimeMiddleware>();
+
 builder.Host.UseSerilog();
 
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestTimeMiddleware>();
 
 using (var scope = app.Services.CreateScope())
 {

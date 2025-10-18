@@ -109,7 +109,7 @@
         }
       }
     },
-    "/WeatherForecast": {
+    "/api/restaurants": {
       "get": {
         "tags": [
           "WeatherForecast"
@@ -207,7 +207,7 @@
         }
       }
     },
-    "/WeatherForecast/all": {
+    "/api/restaurants/all": {
       "get": {
         "tags": [
           "WeatherForecast"
@@ -219,7 +219,7 @@
         }
       }
     },
-    "/WeatherForecast/find": {
+    "/api/restaurants/find": {
       "get": {
         "tags": [
           "WeatherForecast"
@@ -241,7 +241,7 @@
         }
       }
     },
-    "/WeatherForecast/add": {
+    "/api/restaurants/add": {
       "post": {
         "tags": [
           "WeatherForecast"
@@ -271,10 +271,171 @@
           }
         }
       }
+    },
+    "/api/restaurants/createdish/{restaurantId}": {
+      "post": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDishCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDishCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDishCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/restaurants/updatedish/{restaurantId}": {
+      "put": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDishCommandV2"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDishCommandV2"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDishCommandV2"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/restaurants/{restaurantId}/dishes": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/restaurants/{restaurantId}/dishes/{dishId}": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "dishId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "CreateDishCommand": {
+        "type": "object",
+        "properties": {
+          "restaurantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateDishesCommand": {
         "type": "object",
         "properties": {
@@ -453,6 +614,24 @@
           "price": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDishCommandV2": {
+        "type": "object",
+        "properties": {
+          "restaurantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

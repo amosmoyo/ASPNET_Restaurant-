@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Infrastucture.Persistence
 {
-    internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options): DbContext(options) // This is called a primary constructor
+    internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : DbContext(options) // This is called a primary constructor
     {
         //public RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options): base(options) { }
         internal DbSet<Restaurants> Restaurants { get; set; }
@@ -45,11 +45,21 @@ namespace Restaurant.Infrastucture.Persistence
             //    .OnDelete(DeleteBehavior.Cascade);
 
             // Restaurant-Dishes relationship (one-to-many)
+
+            //This defines a directional relationship
+            //modelBuilder.Entity<Restaurants>()
+            //    .HasMany(r => r.Dishes)
+            //    .WithOne(d => d.Restaurants)
+            //    .HasForeignKey(d => d.RestaurantId)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+
+            //This defines a unidirectional relationship — Restaurant knows its dishes, but a Dish doesn’t know its Restaurant.
             modelBuilder.Entity<Restaurants>()
-                .HasMany(r => r.Dishes)
-                .WithOne(d => d.Restaurants)
-                .HasForeignKey(d => d.RestaurantId)
-                .OnDelete(DeleteBehavior.Cascade);
+            .HasMany(r => r.Dishes)
+            .WithOne()
+            .HasForeignKey(d => d.RestaurantId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

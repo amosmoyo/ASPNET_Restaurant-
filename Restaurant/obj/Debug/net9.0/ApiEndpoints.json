@@ -65,7 +65,7 @@
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/restaurants",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -86,7 +86,7 @@
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "UpdateRestaurants",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/restaurants",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -107,7 +107,7 @@
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "DeleteRestaurants",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/restaurants",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -122,8 +122,45 @@
   },
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "findAllDished",
+    "RelativePath": "api/restaurants/{restaurantId}/dishes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "findDish",
+    "RelativePath": "api/restaurants/{restaurantId}/dishes/{dishId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dishId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "Create",
-    "RelativePath": "WeatherForecast/add",
+    "RelativePath": "api/restaurants/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -139,7 +176,7 @@
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "GetAllRestaurants",
-    "RelativePath": "WeatherForecast/all",
+    "RelativePath": "api/restaurants/all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -148,8 +185,29 @@
   },
   {
     "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "CreateDish",
+    "RelativePath": "api/restaurants/createdish/{restaurantId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Restaurant.Application.DishCQRS.Commands.CreateDishCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
     "Method": "GetRestaurant",
-    "RelativePath": "WeatherForecast/find",
+    "RelativePath": "api/restaurants/find",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -158,6 +216,27 @@
         "Name": "Id",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.Controllers.WeatherForecastController",
+    "Method": "UpdateDish",
+    "RelativePath": "api/restaurants/updatedish/{restaurantId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Restaurant.Application.DishCQRS.UpdateCommand.UpdateDishCommandV2",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
