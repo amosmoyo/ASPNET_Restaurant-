@@ -29,6 +29,7 @@ D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\FluentValidation.Dependen
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Humanizer.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\MediatR.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\MediatR.Contracts.dll
+D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Microsoft.Build.Locator.dll
@@ -185,6 +186,7 @@ D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Restaurant.Infrastucture.
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Restaurant.Application.pdb
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Restaurant.Infrastucture.pdb
 D:\TESTPROJECTS\Restaurant\Restaurant\bin\Debug\net9.0\Restaurant.Domain.pdb
+D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.MvcApplicationPartsAssemblyInfo.cs
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\scopedcss\bundle\Restaurant.styles.css
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\staticwebassets.build.json
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\staticwebassets.development.json
@@ -202,4 +204,3 @@ D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\refint\Restaurant.dll
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.pdb
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.genruntimeconfig.cache
 D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\ref\Restaurant.dll
-D:\TESTPROJECTS\Restaurant\Restaurant\obj\Debug\net9.0\Restaurant.MvcApplicationPartsAssemblyInfo.cs

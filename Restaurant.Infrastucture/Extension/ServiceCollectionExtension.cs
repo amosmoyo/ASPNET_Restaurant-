@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurant.Domain.AutoMappers;
+using Restaurant.Domain.Entities;
 using Restaurant.Domain.Repositories;
 using Restaurant.Infrastucture.Persistence;
 using Restaurant.Infrastucture.Respositories;
@@ -11,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Restaurant.Infrastucture.Extension
 {
@@ -27,6 +30,9 @@ namespace Restaurant.Infrastucture.Extension
                 .EnableDetailedErrors()
             );
 
+
+    
+
             services.AddScoped<IRestaurantSeeder, RestaurantSeader>();
 
             services.AddScoped<IRestaurantsRepo, RestaurantsRepo>();
@@ -34,6 +40,7 @@ namespace Restaurant.Infrastucture.Extension
             services.AddScoped<IDishRepo, DishRepo>();
 
             services.AddAutoMapper(typeof(RestaurantProfile).Assembly);
+
         }
 
     }

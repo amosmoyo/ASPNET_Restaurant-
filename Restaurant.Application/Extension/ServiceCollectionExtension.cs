@@ -4,6 +4,7 @@ using Restaurant.Application.CQRS.COMMAND;
 using Restaurant.Application.CQRS.COMMAND.UPDATE;
 using Restaurant.Application.DishCQRS.Commands;
 using Restaurant.Application.DTOs;
+using Restaurant.Application.HttpContext;
 using Restaurant.Application.Services;
 using Restaurant.Domain.AutoMappers;
 using Restaurant.Domain.Repositories;
@@ -21,12 +22,19 @@ public static class ServiceCollectionExtension
     {
 
         services.AddScoped<IRestaurantServices, RestaurantServices>();
+
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateRestaurantCommand).Assembly));
+
         services.AddAutoMapper(typeof(RestaurantsProfilers).Assembly);
+
         services.AddValidatorsFromAssemblyContaining<CreateDishCommand>();
-        //services.AddValidatorsFromAssemblyContaining<UpdateDishCommand>();
+
         services.AddScoped<IDishServices, DishServices>();
+
         services.AddAutoMapper(typeof(DishesProfiler).Assembly);
+
+        services.AddScoped<IUserContext, UserContext>();
+
     }
 }
 

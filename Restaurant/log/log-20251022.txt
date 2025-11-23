@@ -1,0 +1,44 @@
+2025-10-22 08:01:13.961 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-22 08:01:14.770 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-22 08:01:15.256 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-22 08:01:17.864 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 4.5342 ms
+2025-10-22 08:01:17.876 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0489271
+2025-10-22 08:01:25.433 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/favicon-32x32.png was executed in 0.1414609
+2025-10-22 08:01:25.456 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.1702241
+2025-10-22 08:01:42.055 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP POST /register responded 400 in 82.7516 ms
+2025-10-22 08:01:42.059 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /register was executed in 0.0872948
+2025-10-22 08:18:22.637 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-22 08:18:23.132 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-22 08:18:23.452 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-22 08:18:25.515 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 4.5818 ms
+2025-10-22 08:18:25.535 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.068274
+2025-10-22 08:18:33.190 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.0601179

@@ -1,0 +1,29 @@
+2025-11-17 13:03:38.888 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-11-17 14:32:32.810 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-11-17 14:32:34.094 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-11-17 14:32:34.708 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-17 14:32:34.767 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-11-17 14:32:39.653 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 52.7529 ms
+2025-11-17 14:32:39.678 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.1079213
+2025-11-17 14:46:50.561 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.1242026

@@ -1,0 +1,123 @@
+2025-10-28 07:29:57.249 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-28 07:29:58.963 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-28 07:29:59.596 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-28 07:30:03.138 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 39.1038 ms
+2025-10-28 07:30:03.160 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0997216
+2025-10-28 07:37:10.138 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-28 07:37:11.562 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-28 07:37:12.026 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-28 07:37:14.975 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 31.6863 ms
+2025-10-28 07:37:14.987 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0685838
+2025-10-28 07:37:23.825 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger was executed in 0.0045285
+2025-10-28 07:37:23.949 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/index.html was executed in 0.1054692
+2025-10-28 07:37:24.129 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/index.js was executed in 0.0462594
+2025-10-28 07:37:24.198 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/index.css was executed in 0.1665203
+2025-10-28 07:37:24.240 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/swagger-ui-standalone-preset.js was executed in 0.1980246
+2025-10-28 07:37:24.240 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/swagger-ui.css was executed in 0.2125279
+2025-10-28 07:37:24.270 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/swagger-ui-bundle.js was executed in 0.2367729
+2025-10-28 07:37:24.744 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.0399022
+2025-10-28 07:37:43.777 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET /api/restaurants responded 401 in 18.7326 ms
+2025-10-28 07:37:43.779 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/restaurants was executed in 0.0217092
+2025-10-28 07:39:01.871 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (93ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-28 07:39:01.924 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP POST /api/users/login responded 401 in 470.6667 ms
+2025-10-28 07:39:01.927 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/users/login was executed in 0.4737454
+2025-10-28 07:39:41.849 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-28 07:39:42.149 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (72ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-10-28 07:39:42.199 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP POST /api/users/register responded 200 in 709.4364 ms
+2025-10-28 07:39:42.203 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/users/register was executed in 0.7133958
+2025-10-28 07:40:15.052 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (115ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-28 07:40:15.221 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (19ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-28 07:40:15.244 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP POST /api/users/login responded 200 in 318.1944 ms
+2025-10-28 07:40:15.248 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/users/login was executed in 0.3215321
+2025-10-28 07:40:41.920 +03:00 [WRN] (Thread ) |LuckyPennySoftware.MediatR.License| 
+ You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-28 07:40:41.950 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET /api/restaurants responded 200 in 161.6223 ms
+2025-10-28 07:40:41.953 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/restaurants was executed in 0.1650894
+2025-10-28 07:41:39.105 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-28 07:41:39.700 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-28 07:41:40.019 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-28 07:41:41.853 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 45.2855 ms
+2025-10-28 07:41:41.871 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0887167
+2025-10-28 07:41:48.332 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.0394885
+2025-10-28 07:42:02.530 +03:00 [WRN] (Thread ) |LuckyPennySoftware.MediatR.License| 
+ You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-10-28 07:42:02.559 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET /api/restaurants responded 200 in 162.4904 ms
+2025-10-28 07:42:02.562 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /api/restaurants was executed in 0.1664045

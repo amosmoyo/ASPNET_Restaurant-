@@ -4,6 +4,11 @@ using Restaurant.Application.Extension;
 using Serilog;
 using Serilog.Events;
 using Restaurant.Middleware;
+using Restaurant.Domain.Entities;
+using Restaurant.Infrastucture.Persistence;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Identity;
+using Restaurant.Infrastucture.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,8 +41,33 @@ builder.Services.AddControllers()
 //builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
+//HttpContext Accessor
+builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "bearerAuth"
+                }
+            },
+            new string[]{ }
+        }
+
+    });
+});
 
 builder.Services.AddInfrastucture(builder.Configuration);
 
@@ -47,6 +77,14 @@ builder.Services.AddTransient<ErrorHandlingMiddleware>();
 builder.Services.AddTransient<RequestTimeMiddleware>();
 
 builder.Host.UseSerilog();
+
+// ? Identity (Minimal API endpoints, backed by EF)
+builder.Services.AddIdentityApiEndpoints<User>()
+        .AddRoles<IdentityRole>()
+        .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipalFactory>()
+        .AddEntityFrameworkStores<RestaurantsDbContext>();
+
+//builder.Services.AddAuthorizationBuilder().AddPolicy(PolicyNames.HasNationality, policy => policy.RequireClaim(PolicyAttributes.Nationality));
 
 
 var app = builder.Build();
@@ -70,14 +108,21 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v11");
         options.RoutePrefix = "swagger"; // UI at /swagger
     });
 }
 
+app.
+    MapGroup("api/users").
+    WithTags("Users").
+    MapIdentityApi<User>();
+
 app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

@@ -1,0 +1,57 @@
+2025-10-23 07:43:20.992 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-23 07:43:22.101 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-23 07:43:22.635 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-23 07:43:25.560 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 3.9272 ms
+2025-10-23 07:43:25.573 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0445134
+2025-10-23 07:43:33.143 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.0418755
+2025-10-23 08:00:58.654 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-23 08:00:59.274 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-23 08:00:59.642 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-23 08:01:02.779 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 3.8526 ms
+2025-10-23 08:01:02.822 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0701546
+2025-10-23 08:01:10.564 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.0446727
+2025-10-23 08:11:57.089 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
+ The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2025-10-23 08:11:57.666 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-10-23 08:11:57.970 +03:00 [INF] (Thread ) |Microsoft.EntityFrameworkCore.Database.Command| 
+ Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-23 08:12:00.050 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
+ HTTP GET / responded 404 in 2.3797 ms
+2025-10-23 08:12:00.056 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext / was executed in 0.0275477
+2025-10-23 08:12:09.430 +03:00 [INF] (Thread ) |Restaurant.Middleware.RequestTimeMiddleware| 
+ Request Microsoft.AspNetCore.Http.DefaultHttpContext /swagger/v1/swagger.json was executed in 0.04583

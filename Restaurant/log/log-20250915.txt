@@ -1,4 +1,0 @@
-2025-09-15 07:59:37.518 +03:00 [WRN] (Thread ) |Microsoft.EntityFrameworkCore.Model.Validation| 
- The entity type 'Address' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
-2025-09-15 08:00:58.069 +03:00 [INF] (Thread ) |Serilog.AspNetCore.RequestLoggingMiddleware| 
- HTTP GET / responded 404 in 44.6634 ms

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Restaurant.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Infrastucture.Persistence
 {
-    internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : DbContext(options) // This is called a primary constructor
+    // internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : DbContext(options)
+
+    public class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) :IdentityDbContext<User>(options) // This is called a primary constructor
     {
         //public RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options): base(options) { }
         internal DbSet<Restaurants> Restaurants { get; set; }
@@ -23,7 +26,6 @@ namespace Restaurant.Infrastucture.Persistence
         //    {
         //        optionsBuilder.UseSqlServer("Data Source =DESKTOP-V1U1B6U\\MSSQLSERVER01; Initial Catalog =Elma; User ID =amosmoyo; Password =password@123456; MultipleActiveResultSets =True; Min Pool Size =5; Max Pool Size =5000; Connect Timeout =180; Application Name =Restaurants;TrustServerCertificate=True;");
         //    }
-
         //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

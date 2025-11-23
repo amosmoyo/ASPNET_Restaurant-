@@ -1,9 +1,11 @@
-  using AutoMapper;
+using AutoMapper;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Validations;
+using Restaurant.Application.Constants;
 using Restaurant.Application.CQRS.COMMAND;
 using Restaurant.Application.CQRS.COMMAND.DELETE;
 using Restaurant.Application.CQRS.COMMAND.UPDATE;
@@ -21,6 +23,7 @@ namespace Restaurant.Controllers;
 
 [ApiController]
 [Route("api/restaurants")]
+[Authorize]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -44,6 +47,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
+    [AllowAnonymous]
     public IEnumerable<WeatherForecast> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -56,6 +60,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("all")]
+    [Authorize(Roles = UserRoles.Manager)]
     public async Task<ActionResult> GetAllRestaurants()
     {
         try
