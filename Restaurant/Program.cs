@@ -84,7 +84,7 @@ builder.Services.AddIdentityApiEndpoints<User>()
         .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipalFactory>()
         .AddEntityFrameworkStores<RestaurantsDbContext>();
 
-//builder.Services.AddAuthorizationBuilder().AddPolicy(PolicyNames.HasNationality, policy => policy.RequireClaim(PolicyAttributes.Nationality));
+builder.Services.AddAuthorizationBuilder().AddPolicy(PolicyNames.HasNationality, policy => policy.RequireClaim(PolicyAttributes.Nationality, "uganda"));
 
 
 var app = builder.Build();

@@ -17,6 +17,7 @@ using Restaurant.Application.DishCQRS.FindOneCommand;
 using Restaurant.Application.DishCQRS.UpdateCommand;
 using Restaurant.Application.Services;
 using Restaurant.Domain.DTOS;
+using Restaurant.Infrastucture.Authorization;
 using System.Diagnostics;
 
 namespace Restaurant.Controllers;
@@ -87,6 +88,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("find")]
+    [Authorize(Policy = PolicyNames.HasNationality)]
     public async Task<ActionResult> GetRestaurant([FromQuery] int Id)
     {
         try

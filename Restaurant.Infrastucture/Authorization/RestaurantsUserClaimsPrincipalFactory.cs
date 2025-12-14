@@ -19,6 +19,7 @@ namespace Restaurant.Infrastucture.Authorization
 
         public override async Task<ClaimsPrincipal> CreateAsync(User user)
         {
+
             var identity = await GenerateClaimsAsync(user);
 
             if (!string.IsNullOrEmpty(user.Nationality))
@@ -26,9 +27,9 @@ namespace Restaurant.Infrastucture.Authorization
                 identity.AddClaim(new Claim(PolicyAttributes.Nationality, user.Nationality));
             }
 
-            if (!string.IsNullOrEmpty(user.DateOfBirth.Value.ToString()))
+            if (user.DateOfBirth.HasValue)
             {
-                identity.AddClaim(new Claim(PolicyAttributes.DateOfBirth, user?.DateOfBirth.Value.ToString()));
+                identity.AddClaim(new Claim(PolicyAttributes.DateOfBirth, user?.DateOfBirth.Value.ToString("yyyy-MM-dd")!));
             }
 
             return new ClaimsPrincipal(identity);
